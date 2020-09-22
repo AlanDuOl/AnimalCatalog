@@ -1,0 +1,115 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* forms */
+.auth-section {
+    margin: 1rem 0.5rem;
+    text-align: center;
+    height: 100%;
+}
+
+.auth-section h2 {
+    text-align: center;
+}
+
+.auth-section .auth-form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 3rem auto;
+    margin-bottom: 2rem;
+    row-gap: 0.5rem;
+}
+
+.auth-section .auth-form div {
+    margin-bottom: 1rem;
+}
+
+.auth-footer {
+    position: fixed;
+    bottom: 0.5rem;
+}
+
+.input-hide {
+    display: none;
+}
+
+.submit-btn {
+    margin: 1rem;
+}
+
+
+/* View style*/
+
+.list-container {
+    margin: 1rem;
+}
+
+.list-container > h2 {
+    margin: 2rem 0;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-header {
+    font-weight: bold;
+}
+
+.list-row {
+    border-bottom: 1px solid black;
+    padding: 5px;
+    margin-bottom: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.list-item {
+    flex: 1 1 100px;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.list-btn {
+    flex-basis: 50px;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Default style*/
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

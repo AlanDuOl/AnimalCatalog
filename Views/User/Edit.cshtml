@@ -1,0 +1,26 @@
+﻿
+@model Microsoft.AspNetCore.Identity.IdentityUser
+
+@{ 
+    Layout = "_Layout";
+}
+
+@{ 
+    ViewData["Title"] = "Edit User";
+}
+
+
+    <section class="auth-section">
+        <h2>Edit User</h2>
+        <div asp-validation-summary="All" class="validation"></div>
+        <form class="auth-form" asp-controller="User" asp-action="Edit" method="post">
+            <label asp-for="@Model.UserName"></label>
+            <input asp-for="@Model.UserName" name="name" placeholder="Enter user name" />
+            <label asp-for="@Model.Email"></label>
+            <input asp-for="@Model.Email" name="email" placeholder="Enter email" />
+            <div class="submit-btn">
+                <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+        </form>
+        <a class="auth-link" asp-action="ChangePassword" asp-controller="User">Change password</a>
+    </section>

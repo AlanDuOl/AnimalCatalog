@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewData["Title"] = "Users";
+}
+
+@model List<ViewModels.ViewUserList>
+
+<section class="list-container">
+    <h2>Users</h2>
+    <ul class="list">
+        <li class="list-row list-header">
+            <div class="list-item">
+                <span class="list-data">Name</span>
+            </div>
+            <div class="list-item">
+                <span class="list-data">Email</span>
+            </div>
+            <div class="list-item">
+                <span class="list-data">Roles</span>
+            </div>
+            <div class="list-item">
+                <span class="list-data list-btn">Edit Roles</span>
+            </div>
+            <div class="list-item">
+                <span class="list-data list-btn">Remove</span>
+            </div>
+        </li>
+        @foreach (var user in Model)
+        {
+            @await Component.InvokeAsync("User", user)
+        }
+    </ul>
+</section>
+

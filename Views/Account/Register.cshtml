@@ -1,0 +1,26 @@
+﻿
+@model ViewModels.ViewUserRegister
+
+@{ Layout = "_Layout"; }
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<section class="auth-section">
+    <h2>Register</h2>
+    <div asp-validation-summary="All" class="validation"></div>
+    <form class="auth-form" asp-controller="Account" asp-action="Register" method="post">
+        <label asp-for="@Model.UserName"></label>
+        <input asp-for="@Model.UserName" name="username" placeholder="Enter your name" />
+        <label asp-for="@Model.Email"></label>
+        <input asp-for="@Model.Email" name="email" placeholder="Enter your email" />
+        <label asp-for="@Model.Password"></label>
+        <input asp-for="@Model.Password" name="password" placeholder="Enter your password" />
+        <label asp-for="@Model.PasswordConfirmation"></label>
+        <input asp-for="@Model.PasswordConfirmation" name="passwordConfirmation" placeholder="Enter your password again" />
+        <button class="sumit-btn" type="submit">Send</button>
+    </form>
+    <a class="auth-link" asp-action="Login" asp-controller="Account">Already registered? Go to login</a>
+    @await Html.PartialAsync("_AuthFooter")
+</section>

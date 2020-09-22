@@ -1,0 +1,33 @@
+﻿
+@model ViewModels.ViewUserRoles
+
+@{ 
+    Layout = "_Layout";
+}
+
+@{ 
+    ViewData["Title"] = "Edit Roles";
+}
+
+<section class="auth-section">
+    <h2>Edit Roles</h2>
+    <div asp-validation-summary="ModelOnly" class="validation"></div>
+    <form class="auth-form" asp-action="UpdateRoles" asp-controller="User" method="post">
+        <label asp-for="@Model.Name"></label>
+        <input asp-for="@Model.Name" readonly="readonly" />
+        <label asp-for="@Model.Email"></label>
+        <input asp-for="@Model.Email" readonly="readonly" />
+        <fieldset>
+            <legend>Add/Remove Roles</legend>
+            <label asp-for="@Model.User"></label>
+            <input asp-for="@Model.User" />
+            <label asp-for="@Model.Manager"></label>
+            <input asp-for="@Model.Manager" />
+            <label asp-for="@Model.Admin"></label>
+            <input asp-for="@Model.Admin" />
+        </fieldset>
+        <div class="submit-btn">
+            <button class="sumit-btn btn btn-success" type="submit">Save</button>
+        </div>
+    </form>
+</section>

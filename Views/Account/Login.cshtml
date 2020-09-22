@@ -1,0 +1,26 @@
+﻿
+@model ViewModels.ViewUserLogin
+
+@{ Layout = "_Layout"; }
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="auth-section">
+    <h2>Login</h2>
+    <div asp-validation-summary="All" class="validation"></div>
+    <form class="auth-form" asp-controller="Account" asp-action="Login" method="post">
+        <label asp-for="@Model.Email"></label>
+        <input asp-for="@Model.Email" name="email" placeholder="Enter your email" />
+        <label asp-for="@Model.Password"></label>
+        <input asp-for="@Model.Password" name="password" placeholder="Enter your password" />
+        <div>
+            <label asp-for="@Model.RememberMe"></label>
+            <input asp-for="@Model.RememberMe" name="rememberme" />
+        </div>
+        <button class="sumit-btn" type="submit">Send</button>
+    </form>
+    <a class="auth-link" asp-action="Register" asp-controller="Account">Register</a>
+    @await Html.PartialAsync("_AuthFooter")
+</section>

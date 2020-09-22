@@ -1,0 +1,27 @@
+﻿
+@model Models.Animal
+
+@{ 
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit Animal";
+}
+
+<section class="auth-section">
+    <h2>Animal</h2>
+    <div asp-validation-summary="All" class="validation"></div>
+    <form class="auth-form" asp-controller="Animal" asp-action="Edit" asp-route-id="" method="post">
+        <label asp-for="@Model.Id"></label>
+        <input asp-for="@Model.Id" readonly />
+        <label asp-for="@Model.Name"></label>
+        <input asp-for="@Model.Name" placeholder="Enter the name" />
+        <label asp-for="@Model.Genus"></label>
+        <input asp-for="@Model.Genus" placeholder="Enter the genus" />
+        <label asp-for="@Model.SubSpecie"></label>
+        <input asp-for="@Model.SubSpecie" placeholder="Enter the subspecie" />
+        <label asp-for="@Model.Specie"></label>
+        <input asp-for="@Model.Specie" placeholder="Enter the specie" />
+        <div class="submit-btn">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</section>
